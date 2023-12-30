@@ -3,9 +3,9 @@ import{Pressable,View,Text,StyleSheet} from 'react-native';
 function CategoryGridTile({title, color}){
     return( 
     <View style={styles.gridItem}>
-        <Pressable>
-            <View>
-            <Text>{title}</Text>
+        <Pressable style={styles.button}>
+            <View style={styles.innerContainer}>
+            <Text style={styles.title}>{title}</Text>
             </View>
         </Pressable>
     </View>
@@ -20,6 +20,24 @@ const styles =StyleSheet.create({
         margin:16,
         height: 150,
         borderRadius:8,
-        elevation:4
+        elevation:4,
+        backgroundColor:'white',
+        shadowColor:'black',
+        shadowOpacity:0.25,
+        shadowOffset:{width:0, height:2},
+        shadowRadius:8,
+    },
+    button:{
+        flex:1
+    },
+    innerContainer:{
+        flex:1,
+        padding:16,
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    title:{
+        fontWeight:'bold',
+        fontSize:18
     }
 })
